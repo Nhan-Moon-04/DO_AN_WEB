@@ -1,0 +1,16 @@
+﻿@model List<DO_AN.Models.LoaiSanPham>
+
+@{
+    Layout = null;
+}
+
+<ul style="background-color: rgb(250, 250, 250);" class="list-group list-group-flush text-left">
+    @{
+    foreach (var item in Model)
+    {
+        <li style="background-color: rgb(250, 250, 250);" class="list-group-item">
+            <a class="btn btn-light" >@item.TenLoai</a>
+        </li>
+    }
+}
+</ul>

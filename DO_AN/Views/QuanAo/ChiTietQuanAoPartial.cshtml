@@ -1,0 +1,41 @@
+﻿@model DO_AN.Models.SanPham
+
+@{
+    ViewBag.Title = "ChiTietQuanAoPartial";
+    Layout = "~/views/layoutpage.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 product-image">
+            <img src="@Url.Content("~/HinhAnhSP/" + Model.AnhBia)" alt="Ảnh sách" class="img-fluid" />
+        </div>
+        <div class="col-md-6 product-info">
+            <p><strong>Tên Sách:</strong> @Model.TenSanPham</p>
+            <p><strong>Tên Chủ Đề:</strong> </p>
+            <p><strong>Tên NXB:</strong> @Model.NhaSanXuat.TenNSX</p>
+            <p><strong>Mô tả:</strong> @Model.MoTa</p>
+            <p><strong>Giá bán:</strong> <strong style="color:red">@Model.GiaBan.ToString() VNĐ</strong></p>
+            <div class="product-actions">
+                <a href="@Url.Action("ThemGioHang", "GioHang", new { @ms = Model.MaSanPham, @strURL = Request.Url.ToString() })">
+                    <input type="submit" value="MUA NGAY" class="btn btn-primary" /> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+                <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Mua Tiếp</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .product-image {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .product-info {
+        padding-left: 20px;
+    }
+
+    .product-actions {
+        margin-top: 20px;
+    }
+</style>
